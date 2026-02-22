@@ -93,7 +93,7 @@ Kenapa error? karena variabel nama belum ada nilainya
 
 Solusinya yaitu kita bisa mengisi variable tersebut seperti ini
 
-![Null Safety](img/NullSafety.png)
+![Null Safety](img/nullSafety.png)
 
 atau bisa juga dengan menambahkan "?" jadi nanti outputnya akan null
 
@@ -103,15 +103,15 @@ Late variable digunakan untuk menunda pengisian nilai variabel. Dengan late, pro
 
 Contohnya
 
-![Late Variabel](img/LateVariabelCodeError.png)
-![Late Variabel](img/LateVariabelOutputError.png)
+![Late Variabel](img/lateVariabelCodeError.png)
+![Late Variabel](img/lateVariabelOutputError.png)
 walaupun codenya tidak error, pada saat kita run akan muncul error "LateInitializationError" karena kita belum mengisi variable namanya
 
 Solusinya yaitu mengisi variabel nama seperti berikut
 
-![Late Variabel](img/LateVariabel.png)
+![Late Variabel](img/lateVariabel.png)
 
-![Late Variabel](img/LateVariabelOutput.png)
+![Late Variabel](img/lateVariabelOutput.png)
 
 Jadi kesimpulannya adalah
 Null Safety digunakan untuk variabel yang boleh bernilai null, sedangkan late digunakan untuk variabel yang tidak boleh null tetapi diisi belakangan, dengan syarat harus diinisialisasi sebelum digunakan agar tidak terjadi error.
