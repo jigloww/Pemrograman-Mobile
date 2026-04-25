@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
           children: [
             _buildTitleSection(),
             _buildButtonSection(context),
+            _buildTextSection(),
           ],
         ),
       ),
@@ -76,3 +77,37 @@ class MyApp extends StatelessWidget {
         _buildButtonColumn(color, Icons.share, 'SHARE'),
       ],
     );
+  }
+
+  Widget _buildButtonColumn(Color color, IconData icon, String label) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(icon, color: color),
+        Container(
+          margin: const EdgeInsets.only(top: 8),
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+              color: color,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildTextSection() {
+    return Container(
+      padding: const EdgeInsets.all(32),
+      child: const Text(
+        'Gunung Arjuno adalah gunung berapi kerucut tertinggi kedua di Jawa Timur (3.339 mdpl) setelah Semeru, yang terletak di perbatasan Kota Batu, Kab. Malang, dan Kab. Pasuruan. Terkenal dengan puncak Ogal-Agil, gunung ini dikelola Tahura Raden Soerjo dan memiliki jalur pendakian via Tretes, Lawang, Purwosari, dan Sumberbrantas.\n\n'
+        'Mochammad Tanggaq Dirat Saputra || 244107060126',
+        softWrap: true,
+      ),
+    );
+  }
+}
