@@ -11,11 +11,12 @@ class MyApp extends StatelessWidget {
       title: 'Layout Flutter',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Wisata Gunung'),
+          title: const Text('Layout Flutter'),
         ),
         body: ListView(
           children: [
             _buildTitleSection(),
+            _buildButtonSection(context),
           ],
         ),
       ),
@@ -63,4 +64,15 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
-}
+
+  Widget _buildButtonSection(BuildContext context) {
+    Color color = Theme.of(context).primaryColor;
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        _buildButtonColumn(color, Icons.call, 'CALL'),
+        _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
+        _buildButtonColumn(color, Icons.share, 'SHARE'),
+      ],
+    );
