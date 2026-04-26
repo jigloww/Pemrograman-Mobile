@@ -15,18 +15,19 @@ class MyApp extends StatelessWidget {
         ),
         body: ListView(
           children: [
-            _buildImageSection(),
+            _buildImageHeader(),
             _buildTitleSection(),
             _buildButtonSection(context),
             _buildTextSection(),
+            _buildRecommendationSection(),
           ],
         ),
       ),
     );
   }
 
-  // BAGIAN GAMBAR (wajib ada untuk tampilan)
-  Widget _buildImageSection() {
+  // BAGIAN 1: Header Gambar
+  static Widget _buildImageHeader() {
     return Image.asset(
       'images/gunung.jpeg',
       width: double.infinity,
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
     );
   }
 
-  Widget _buildTitleSection() {
+  // BAGIAN 2: Title Section
+  static Widget _buildTitleSection() {
     return Container(
       padding: const EdgeInsets.all(32),
       child: Row(
@@ -45,7 +47,7 @@ class MyApp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  padding: const EdgeInsets.only(bottom: 8.0),
+                  padding: const EdgeInsets.only(bottom: 8),
                   child: const Text(
                     'Wisata Gunung di Batu',
                     style: TextStyle(
@@ -54,7 +56,7 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text(
+                const Text(
                   'Batu, Malang, Indonesia',
                   style: TextStyle(
                     color: Colors.grey,
@@ -74,7 +76,8 @@ class MyApp extends StatelessWidget {
     );
   }
 
-  Widget _buildButtonSection(BuildContext context) {
+  // BAGIAN 3: Button Section
+  static Widget _buildButtonSection(BuildContext context) {
     Color color = Theme.of(context).primaryColor;
 
     return Row(
@@ -87,7 +90,7 @@ class MyApp extends StatelessWidget {
     );
   }
 
-  Widget _buildButtonColumn(Color color, IconData icon, String label) {
+  static Widget _buildButtonColumn(Color color, IconData icon, String label) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -108,7 +111,8 @@ class MyApp extends StatelessWidget {
     );
   }
 
-  Widget _buildTextSection() {
+  // BAGIAN 4: Text Section
+  static Widget _buildTextSection() {
     return Container(
       padding: const EdgeInsets.all(32),
       child: const Text(
@@ -119,6 +123,49 @@ class MyApp extends StatelessWidget {
         'via Tretes, Lawang, Purwosari, dan Sumberbrantas.\n\n'
         'Mochammad Tanggaq Dirat Saputra || 244107060126',
         softWrap: true,
+      ),
+    );
+  }
+
+  // BAGIAN 5: Recommendation Section
+  static Widget _buildRecommendationSection() {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Rekomendasi Gunung Lain',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 16),
+
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              _buildRecommendationImage('images/gunung_bromo.jpeg'),
+              const SizedBox(width: 8),
+              _buildRecommendationImage('images/gunung_raung.jpeg'),
+              const SizedBox(width: 8),
+              _buildRecommendationImage('images/gunung_rinjani.jpeg'),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  static Widget _buildRecommendationImage(String path) {
+    return Expanded(
+      child: Container(
+        height: 120,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Image.asset(path, fit: BoxFit.cover),
+        ),
       ),
     );
   }

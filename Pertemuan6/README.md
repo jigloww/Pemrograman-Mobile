@@ -161,3 +161,52 @@ Widget buttonSection = Row(
 - OUTPUT
 
 ![Output Praktikum 4](img/prak4.jpeg)
+
+## Soal 2
+Silakan implementasikan di project baru "basic_layout_flutter" dengan mengakses sumber ini: https://docs.flutter.dev/codelabs/layout-basics 
+
+### Menambahkan rekomendasi section
+``` dart
+static Widget _buildRecommendationSection() {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Rekomendasi Gunung Lain',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 16),
+
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              _buildRecommendationImage('images/gunung_bromo.jpeg'),
+              const SizedBox(width: 8),
+              _buildRecommendationImage('images/gunung_raung.jpeg'),
+              const SizedBox(width: 8),
+              _buildRecommendationImage('images/gunung_rinjani.jpeg'),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+```
+### Tambahkan juga di body 
+``` dart
+        body: ListView(
+          children: [
+            _buildImageHeader(),
+            _buildTitleSection(),
+            _buildButtonSection(context),
+            _buildTextSection(),
+            _buildRecommendationSection(),
+          ],
+        ),
+```
+
+- OUTPUT
+
+![Output Praktikum 4 - Soal 2](img/prak4-soal2.jpeg)

@@ -22,3 +22,6 @@ flutter:
 
   assets:
     - images/gunung.jpeg
+    - images/gunung_bromo.jpeg
+    - images/gunung_raung.jpeg
+    - images/gunung_rinjani.jpeg
