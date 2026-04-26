@@ -210,3 +210,13 @@ static Widget _buildRecommendationSection() {
 - OUTPUT
 
 ![Output Praktikum 4 - Soal 2](img/prak4-soal2.jpeg)
+
+## Tugas Praktikum 2
+
+- Output 
+
+![Output Tgs Praktikum 2](img/homepage.jpeg)
+
+![Output Tgs Praktikum 2](img/2varian.jpeg)
+
+![Output Tgs Praktikum 2](img/3varian.jpeg)
